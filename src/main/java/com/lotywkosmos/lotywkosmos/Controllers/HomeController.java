@@ -8,6 +8,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String mainPage(){
-        return "WITAM NA NAJBARDZIEJ ROZBUDOWANEJ STRONIE EVER, RAZEM Z DRUŻYNĄ LWKXD ZYCZYMY WSZYSTKIEGO DOBREGO";
+        return "WITAM NA NAJBARDZIEJ ROZBUDOWANEJ STRONIE EVER, RAZEM Z DRUŻYNĄ LWKXD ZYCZYMY WSZYSTKIEGO DOBREGO\n" +
+                "available endpoints:" +
+                "\n/users, /users/{id}"+
+                "\n/orders, /orders/{id}";
     }
 }
