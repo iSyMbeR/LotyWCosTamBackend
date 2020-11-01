@@ -10,19 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Table(name = "PLANETS")
 public class Planet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private @Column(unique = true) String name;
     private String description;
     private double distanceFromTheSun;
 
-    public Planet(String name, String description, double distanceFromTheSun) {
-        this.name = name;
-        this.description = description;
-        this.distanceFromTheSun = distanceFromTheSun;
-    }
 }

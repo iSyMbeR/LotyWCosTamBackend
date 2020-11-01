@@ -11,21 +11,16 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Table(name = "FLIGHTS")
 public class Flight {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int maxSize;
     private LocalDate start_date;
     private LocalDate end_date;
+    private Double ticketPrice;
     @OneToOne
     private PortLink portLink;
-
-    public Flight(int maxSize, LocalDate start_date, LocalDate end_date, PortLink idPortLink) {
-        this.maxSize = maxSize;
-        this.start_date = start_date;
-        this.end_date = end_date;
-    }
 }

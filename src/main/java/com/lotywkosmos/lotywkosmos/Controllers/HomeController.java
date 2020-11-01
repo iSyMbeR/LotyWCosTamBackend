@@ -11,6 +11,11 @@ public class HomeController {
         return "WITAM NA NAJBARDZIEJ ROZBUDOWANEJ STRONIE EVER, RAZEM Z DRUŻYNĄ LWKXD ZYCZYMY WSZYSTKIEGO DOBREGO\n" +
                 "available endpoints:" +
                 "\n/users, /users/{id}"+
-                "\n/orders, /orders/{id}";
+                "\n/orders, /orders/{id}" +
+                "\n/orderItems, /orderItems/{id}" +
+                "\n/flights, /flights/{id}" +
+                "\n/planets, /planets/{id}" +
+                "\n/ports, /ports/{id}" +
+                "\n/portLinks, /portLinks/{id}";
     }
 }

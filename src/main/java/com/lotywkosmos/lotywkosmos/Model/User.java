@@ -11,22 +11,17 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Table(name = "USERS")
 public class User {
     private @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     private @Column(unique = true)
     String login;
     private String password;
+    private char sex;
     private String firstName;
     private String lastName;
     private LocalDate date_of_birth;
-    public User(String login, String password, String firstName, String lastName, LocalDate date_of_birth) {
-        this.login = login;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.date_of_birth = date_of_birth;
-    }
 }
