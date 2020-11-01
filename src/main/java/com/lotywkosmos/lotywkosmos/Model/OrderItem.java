@@ -10,19 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Table(name = "ORDER_ITEMS")
 public class OrderItem {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Order idOrder;
     @OneToOne
     private Flight idFlight;
 
-    public OrderItem(Order idOrder, Flight idFlight) {
-        this.idOrder = idOrder;
-        this.idFlight = idFlight;
-    }
 }

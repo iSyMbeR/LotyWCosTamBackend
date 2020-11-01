@@ -10,19 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Table(name = "PORTS")
 public class Port {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Planet planet;
 
-    public Port(String name, String description, Planet planet) {
-        this.name = name;
-        this.description = description;
-        this.planet = planet;
-    }
+    @ManyToOne
+    private Planet planet;
 }

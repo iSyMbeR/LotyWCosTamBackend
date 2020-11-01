@@ -23,8 +23,7 @@ public class OrderService {
                 .orElseThrow();
     }
 
-    public void addOrderToBase() {
-        Order order = new Order();
+    public void addOrderToBase(Order order) {
         orderRepository.save(order);
     }
 }

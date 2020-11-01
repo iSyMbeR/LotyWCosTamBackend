@@ -17,8 +17,7 @@ public class UserService {
     }
 
     public User getSingleUser(long id) {
-        return userRepository.findById(id)
-                .orElseThrow();
+        return userRepository.findById(id).orElseThrow();
     }
 
     public void addUserToBase(User user) {
