@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Table(name = "ORDER_ITEMS")
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     private Order idOrder;

@@ -20,5 +20,4 @@ public class Order {
     @OneToOne
     private User user;
     private Boolean status;
-    private double summaryPrice;
 }

@@ -35,6 +35,7 @@ class DataBaseFiller {
 
 
     // JEZELI KTOS TO BEDZIE DODAWAŁ TO POLECAM DODAWAĆ W TEJ KOLEJNOSCI I CZEKAĆ AŻ BEDZIE KOMUNIKAT NA STRONIE ZE DODANO
+    // NO I TRZEBA W BAZIE TABELE WSZYSTKIE DROPNĄĆ
     @GetMapping("createRandomUsers")
     public String createRandomUsers() {
         fillYearsArray();
@@ -120,7 +121,6 @@ class DataBaseFiller {
         for(int i=1; i<16; i++){
             orderService.addOrderToBase(Order.builder()
                     .user(userService.getSingleUser(1 + random.nextInt(100)))
-                    .summaryPrice(10000+random.nextInt(1000000))
                     .status(trueFalseArray[random.nextInt(2)])
                     .build());
         }
