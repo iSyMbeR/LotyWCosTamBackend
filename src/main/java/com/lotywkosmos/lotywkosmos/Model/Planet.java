@@ -18,6 +18,7 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private @Column(unique = true) String name;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private double distanceFromTheSun;
 
