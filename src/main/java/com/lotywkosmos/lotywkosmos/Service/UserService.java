@@ -20,7 +20,7 @@ public class UserService {
         return userRepository.findById(id).orElseThrow();
     }
 
-    public void addUserToBase(User user) {
+    public void addUser(User user) {
         userRepository.save(user);
     }
 }

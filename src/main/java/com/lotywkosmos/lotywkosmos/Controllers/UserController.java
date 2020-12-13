@@ -3,9 +3,7 @@ package com.lotywkosmos.lotywkosmos.Controllers;
 import com.lotywkosmos.lotywkosmos.Model.User;
 import com.lotywkosmos.lotywkosmos.Service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +23,10 @@ public class UserController {
     public User getSingleUser(@PathVariable long id) {
         return userService.getSingleUser(id);
     }
+
+    @PostMapping("/users")
+    public void addUser(@RequestBody User user){
+        userService.addUser(user);
+    }
+
 }

@@ -43,7 +43,7 @@ class DataBaseFiller {
 
             //men
             if(i<50)
-                userService.addUserToBase(User.builder()
+                userService.addUser(User.builder()
                         .firstName("firstName"+i)
                         .lastName("lastName"+i)
                         .login("user"+i)
@@ -54,7 +54,7 @@ class DataBaseFiller {
 
 
             else {//women/
-                userService.addUserToBase(User.builder()
+                userService.addUser(User.builder()
                         .firstName("firstName"+i)
                         .lastName("lastName"+i)
                         .login("user"+i)
@@ -83,9 +83,9 @@ class DataBaseFiller {
     public String createRandomPorts(){
             for(int i=1; i<31; i++){
                 portService.addPortToBase(Port.builder()
-                        .planet(planetService.getSinglePlanet(1 + random.nextInt(10)))
+                        .name("port nr "+ i)
                         .description("info port"+i)
-                        .name("port nr "+ 1)
+                        .planet(planetService.getSinglePlanet(1 + random.nextInt(10)))
                         .build());
             }
             return "added 30 new Ports";
