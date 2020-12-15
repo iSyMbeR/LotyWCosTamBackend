@@ -36,4 +36,8 @@ public class UserController {
         userService.addUser(user);
     }
 
+    @GetMapping("/users/search/{login}/{password}")
+    public User getUserByLoginAndPassword(@PathVariable String login, @PathVariable String password){
+        return userService.getUserByLoginAndPassword(login, password);
+    }
 }
