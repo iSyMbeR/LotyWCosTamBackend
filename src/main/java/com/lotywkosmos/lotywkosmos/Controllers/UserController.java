@@ -3,6 +3,8 @@ package com.lotywkosmos.lotywkosmos.Controllers;
 import com.lotywkosmos.lotywkosmos.Model.User;
 import com.lotywkosmos.lotywkosmos.Service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +19,11 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getUsers(){
         return userService.getUsers();
+    }
+
+    @GetMapping("/users/{page}/{sort}")
+    public Page<User> getUsersWithSorting(@PathVariable int page, @PathVariable Sort.Direction sort){
+        return userService.getUsersWithSorting(page, sort);
     }
 
     @GetMapping("/users/{id}")
