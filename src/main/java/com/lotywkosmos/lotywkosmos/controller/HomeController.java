@@ -16,6 +16,7 @@ public class HomeController {
                 "\n/flights, /flights/{id}" +
                 "\n/planets, /planets/{id}" +
                 "\n/ports, /ports/{id}" +
-                "\n/portLinks, /portLinks/{id}";
+                "\n/portLinks, /portLinks/{id}" +
+                "\n/tickets, /tickets/user/id, /tickets/flight/id, /tickets/user/id/count,/ tickets/flight/id/count";
     }
 }
